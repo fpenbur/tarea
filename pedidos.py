@@ -82,6 +82,11 @@ def ver_pedidos():
 
 
 def calcular_total_desde_menu():
+    """Solicita un número de pedido y muestra su desglose económico.
+
+    Calcula y muestra por pantalla el subtotal, el descuento aplicado,
+    el IVA (21 %) y el total final del pedido seleccionado.
+    """
     if len(pedidos) == 0:
         print("No hay pedidos")
         return

@@ -1,5 +1,5 @@
 from clientes import clientes
-from utilidades import pedir_numero
+from utilidades import pedir_numero, calcular_descuento
 
 pedidos = []
 
@@ -76,10 +76,7 @@ def ver_pedidos():
             total = 0
             for l in p["lineas"]:
                 total = total + l["cantidad"] * l["precio"]
-            if total > 100:
-                total = total - total * 0.10
-            elif total > 50:
-                total = total - total * 0.05
+            total = total - calcular_descuento(total)
             print(str(pos + 1) + ". Cliente: " + p["cliente"]["nombre"] + " | Estado: " + p["estado"] + " | Total: " + str(round(total, 2)) + " €")
             pos = pos + 1
 
@@ -99,12 +96,7 @@ def calcular_total_desde_menu():
     for linea in p["lineas"]:
         suma = suma + linea["cantidad"] * linea["precio"]
 
-    # Reglas de descuento duplicadas a propósito
-    descuento = 0
-    if suma > 100:
-        descuento = suma * 0.10
-    elif suma > 50:
-        descuento = suma * 0.05
+    descuento = calcular_descuento(suma)
 
     iva = (suma - descuento) * 0.21
     total = suma - descuento + iva

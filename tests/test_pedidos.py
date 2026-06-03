@@ -13,3 +13,7 @@ def test_descuento_mayor_50():
 
 def test_sin_descuento():
     assert calcular_descuento(20) == 0
+
+
+def test_descuento_en_limite_exacto_100():
+    assert calcular_descuento(100) == 5.0

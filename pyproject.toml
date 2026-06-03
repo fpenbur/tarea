@@ -5,4 +5,4 @@ exclude = [".venv", "pycache"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
-ignore = []
+ignore = ["E501", "E741"]

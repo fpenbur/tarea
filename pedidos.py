@@ -1,12 +1,12 @@
 from clientes import clientes
-from utilidades import pedir_numero, calcular_descuento
+from utilidades import calcular_descuento, pedir_numero
 
 pedidos = []
 
 
 def menu_pedidos():
     fin = False
-    while fin == False:
+    while not fin:
         print("\n--- PEDIDOS ---")
         print("1. Crear pedido")
         print("2. Listar pedidos")

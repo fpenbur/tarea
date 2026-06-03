@@ -1,6 +1,6 @@
-def mostrar_titulo(t):
+def mostrar_titulo(titulo):
     print("\n============================")
-    print(t)
+    print(titulo)
     print("============================")
 
 
@@ -13,5 +13,5 @@ def pedir_numero(mensaje):
         return 0
 
 
-def formatear_moneda(x):
-    return str(round(x, 2)) + " €"
+def formatear_moneda(cantidad):
+    return str(round(cantidad, 2)) + " €"
